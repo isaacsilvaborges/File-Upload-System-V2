@@ -3,7 +3,7 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -32,6 +32,11 @@
 .title,
 .description {
   text-align: center;
+}
+
+.arrowback {
+  text-decoration: none;
+  color: #7109b7;
 }
 
 /* DESCRIÇÃO ABAIXO DO TÍTULO
@@ -76,7 +81,7 @@
   font-size: large;
 }
 
-/* CARDS (projeto inicial)
+/* CARDS (projeto inicial) */
 .grid {
   display: flex;
   align-items: center;
@@ -102,8 +107,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #820AD1;
+  border-color: #820AD1;
 }
 
 .card h3 {
@@ -116,7 +121,7 @@
   font-size: 1.25rem;
   line-height: 1.5;
 }
-*/
+
 
 .logo {
   height: 1em;
