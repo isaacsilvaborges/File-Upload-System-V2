@@ -20,7 +20,28 @@ export default function PaginaPrincipal() {
             <h3>Cadastro de projeto &rarr;</h3>
             <p>Preencha o formulário para cadastrar um novo projeto</p>
           </a>
+
+          <a href=""docs className={styles.card}> 
+            <h3>Planilha para acompanhamento &rarr;</h3>
+            <p>Acompanhe o andamento dos projetos cadastrados</p>
+          </a>
+
+          <a href=""docs className={styles.card}> 
+            <h3>Planilha para acompanhamento &rarr;</h3>
+            <p>Acompanhe o andamento dos projetos cadastrados</p>
+          </a>
+
+          <a href=""docs className={styles.card}> 
+            <h3>Planilha para acompanhamento &rarr;</h3>
+            <p>Acompanhe o andamento dos projetos cadastrados</p>
+          </a>
+
+          <a href=""docs className={styles.card}> 
+            <h3>Planilha para acompanhamento &rarr;</h3>
+            <p>Acompanhe o andamento dos projetos cadastrados</p>
+          </a>
         </div>
+
         </main>
 
         <footer>
