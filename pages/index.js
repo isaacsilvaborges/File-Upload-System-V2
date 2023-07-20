@@ -1,3 +1,5 @@
+// tela de cadastro
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -40,7 +42,7 @@ export default function Cadastro() {
   // define a classe CSS 'input-error' se o formulário for enviado com algum input vazio
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Cadastro</title>
         {/* título que aparece na aba do navegador */}
@@ -50,60 +52,72 @@ export default function Cadastro() {
       
 
       <main>
-        <header className={styles.header}>
+        <div className={styles.pagina}> {/* página dividida em barra lateral e conteúdo */}
+          <div className={styles.barralateral}>
+            <Link href="menu" className={styles.logomenu}>
+              Menu
+            </Link>
+          </div>
           
-        </header>
-        
-        <h1 className={styles.title}>
-          <Link href="menu" className={styles.arrowback}>&#8617;</Link> Cadastro de projeto
-        </h1>
+          <div className={styles.container}>
+            <h1 className={styles.title}>
+              Cadastro de projeto
+            </h1>
 
-        <form onSubmit={handleSubmit} className={styles.formulario}>
+            <form onSubmit={handleSubmit} className={styles.formulario}>
 
-          <div className={styles.inputs}>
-            <label htmlFor="nomeProjeto">Nome do projeto:</label>
-            <input
-            type='text'
-            id='nomeProjeto'
-            value={nomeProjeto}
-            onChange={(event) => setNomeProjeto(event.target.value)}
-            className={styles.inputClassName}>
-            </input>
+              <div className={styles.inputs}>
+                <label htmlFor="nomeProjeto">Nome do projeto:</label>
+                <input
+                type='text'
+                id='nomeProjeto'
+                value={nomeProjeto}
+                onChange={(event) => setNomeProjeto(event.target.value)}
+                className={styles.inputClassName}>
+                </input>
+              </div>
+
+
+              <div className={styles.colunas}>
+                <div className={styles.coluna50}>
+                  <div className={styles.inputs}>
+                    <label htmlFor="numParticipantes">Número de participantes:</label>
+                    <input
+                    type='number'
+                    id='numParticipantes'
+                    value={numParticipantes}
+                    onChange={(event) => setNumParticipantes(event.target.value)}
+                    className={styles.inputClassName}>
+                    </input>
+                  </div>
+                </div>
+                <div className={styles.coluna50}>
+                  <div className={styles.inputs}>
+                    <label htmlFor="numParticipantes">Exemplo:</label>
+                    <input
+                    type='text'
+                    id='numParticipantes'
+                    value={numParticipantes}
+                    onChange={(event) => setNumParticipantes(event.target.value)}
+                    className={styles.inputClassName}>
+                    </input>
+                  </div>
+                </div>
+              </div>
+
+              {erro && <p>{erro}</p>}
+
+              <div className={styles.botao}>
+                <input
+                type='submit'
+                onClick={handleSubmit}>
+                </input>
+              </div>
+
+            </form>
           </div>
-
-          <div className={styles.inputs}>
-            <label htmlFor="numParticipantes">Número de participantes:</label>
-            <input
-            type='number'
-            id='numParticipantes'
-            value={numParticipantes}
-            onChange={(event) => setNumParticipantes(event.target.value)}
-            className={styles.inputClassName}>
-            </input>
-          </div>
-
-          {erro && <p>{erro}</p>}
-
-          <div className={styles.botao}>
-            <input
-            type='submit'
-            onClick={handleSubmit}>
-            </input>
-          </div>
-
-        </form>
-
+        </div>
       </main>
-
-      <footer>
-        <a
-          href="https://nubank.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Nubank
-        </a>
-      </footer>
 
       <style jsx>{`
         main {
