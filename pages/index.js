@@ -6,6 +6,8 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 
+import { criarProjeto } from '../services/projectService'; 
+
 export default function Cadastro() {
   const [nomeProjeto, setNomeProjeto] = useState('');
   const [numParticipantes, setNumParticipantes] = useState('');
@@ -27,6 +29,14 @@ export default function Cadastro() {
       //enviar dados para o servidor e realizar ações necessárias
       console.log('Nome do projeto:', nomeProjeto);
       console.log('Número de participantes:', numParticipantes);
+
+      const projeto = {
+        "title": nomeProjeto,
+        "quantity": parseInt(numParticipantes), // Convertendo para número inteiro, já que o input é do tipo "number"
+      };
+      console.log(projeto)
+      // Chamar a função "criarProjeto" para enviar o projeto para o servidor
+      const response = criarProjeto(projeto);
 
       //limpar campos após envio bem sucedido
       setNomeProjeto('');
