@@ -1,0 +1,156 @@
+.pagina { /* divide a página em barra lateral e conteúdo; alinha na horizontal */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+}
+
+.barralateral { /* barra na lateral esquerda, navegação? */
+  background-color: #820AD1;
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.logomenu { /* logo nubank para retornar ao menu inicial */
+  color: white;
+  text-decoration: none;
+  font-size: xx-large;
+}
+
+.container { /* estrutura da página, conteúdo */
+  height: 90%;
+  width: 100%;
+  padding: 20px;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; /*eixo x*/
+}
+.title {
+  line-height: 1.15;
+  font-size: 40px;
+  align-self: start;
+  color: black;
+}
+
+/* abas de navegação do cadastro de novo projeto */
+.abasnav { /* alinhar botões na horizontal */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.botaoaba { /* botões das abas que não estão abertas */
+  background-color: rgb(130, 10, 209, 0.5);
+  border: solid 1px rgb(130, 10, 209);
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.botaoabaon { /* botão da aba aberta */
+  background-color: rgb(130, 10, 209);
+  border: solid 1px rgb(130, 10, 209);
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.textoaba { /* texto dentro do botão */
+  text-decoration: none;
+  color: white;
+  font-size: large;
+}
+
+/* inputs do cadastro */
+.formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputs { /* conjunto label + input */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px 0px;
+  width: 100%;
+  font-size: large;
+}
+.inputs input { /* caixa de input */
+  border: solid 2px rgb(130, 10, 209, 0);
+  border-radius: 5px;
+  background-color: rgb(130, 10, 209, 0.2);
+  width: 100%;
+  padding: 15px;
+}
+.inputs input:focus,
+.inputs input:active { /* mudar cor da borda quando selecionado */
+  outline: none;
+  border: solid 2px #820AD1;
+}
+
+.colunas { /* alinhar quando tem mais de um input em uma linha */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.coluna50 { /* para quando tem dois inputs na mesma linha, define a largura de cada um como 50%*/
+  width: 50%;
+}
+
+.botao input { /* botão de enviar formulário */
+  border: none;
+  border-radius: 5px 20px 20px 20px;
+  background-color: #820AD1;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 50px;
+  margin: 10px;
+  font-size: large;
+}
+
+/* navegação menu principal */
+.grid { /* alinhar grade com cards de navegação */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  margin-top: 3rem;
+}
+.card { /* cada card que leva a uma página diferente */
+  margin: 1rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  height: 180px;
+}
+.card:hover,
+.card:focus,
+.card:active { /* mudar de cor ao passar o cursor por cima de cada card */
+  color: #820AD1;
+  border-color: #820AD1;
+}
+/* texto dentro de cada card */
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
