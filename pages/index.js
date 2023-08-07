@@ -1,113 +1,133 @@
+// tela de cadastro
+
+import Link from 'next/link';
+import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
+
+import { criarProjeto } from '../services/projectService'; 
 
 export default function Cadastro() {
   const [nomeProjeto, setNomeProjeto] = useState('');
   const [numParticipantes, setNumParticipantes] = useState('');
   const [erro, setErro] = useState('');
+  const [formEnviado, setFormEnviado] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     //caso algum dos campos não tenha sido preenchido
-    if (!nomeProjeto || !nomeResponsavel) {
+    if (!nomeProjeto || !numParticipantes) {
       setErro('Preencha todos os campos.');
+      setFormEnviado(true);
+      //definir borda do input não preenchido como vermelho
+      //não aceitar apenas espaços no input de texto
+      //não aceitar zero no input numérico
     }
     else {
       //enviar dados para o servidor e realizar ações necessárias
       console.log('Nome do projeto:', nomeProjeto);
       console.log('Número de participantes:', numParticipantes);
 
+      const projeto = {
+        "title": nomeProjeto,
+        "quantity": parseInt(numParticipantes), // Convertendo para número inteiro, já que o input é do tipo "number"
+      };
+      console.log(projeto)
+      // Chamar a função "criarProjeto" para enviar o projeto para o servidor
+      const response = criarProjeto(projeto);
+
       //limpar campos após envio bem sucedido
       setNomeProjeto('');
       setNumParticipantes('');
       setErro('');
+      setFormEnviado(false);
+
+      //adicionar mensagem de cadastro realizado com sucesso
     }
   }
 
+  const inputClassName = formEnviado && (!nomeProjeto || !numParticipantes) ? 'input-error' : '';
+  // define a classe CSS 'input-error' se o formulário for enviado com algum input vazio
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Cadastro</title>
         {/* título que aparece na aba do navegador */}
         <link rel="icon" href="https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-0-1.png" />
         {/* ícone que aparece na aba do navegador */}
       </Head>
+      
 
       <main>
-        <h1 className={styles.title}>
-          Cadastro de projeto
-        </h1>
-
-        <form onSubmit={handleSubmit} className={styles.formulario}>
-          <div className={styles.inputs}>
-            <label htmlFor="nomeProjeto">Nome do projeto:</label>
-            <input
-            type='text'
-            id='nomeProjeto'>
-            </input>
+        <div className={styles.pagina}> {/* página dividida em barra lateral e conteúdo */}
+          <div className={styles.barralateral}>
+            <Link href="menu" className={styles.logomenu}>
+              Menu
+            </Link>
           </div>
-          <div className={styles.inputs}>
-            <label htmlFor="numParticipantes">Número de participantes:</label>
-            <input
-            type='number'
-            id='numParticipantes'>
-            </input>
+          
+          <div className={styles.container}>
+            <h1 className={styles.title}>
+              Cadastro de projeto
+            </h1>
+
+            <form onSubmit={handleSubmit} className={styles.formulario}>
+
+              <div className={styles.inputs}>
+                <label htmlFor="nomeProjeto">Nome do projeto:</label>
+                <input
+                type='text'
+                id='nomeProjeto'
+                value={nomeProjeto}
+                onChange={(event) => setNomeProjeto(event.target.value)}
+                className={styles.inputClassName}>
+                </input>
+              </div>
+
+
+              <div className={styles.colunas}>
+                <div className={styles.coluna50}>
+                  <div className={styles.inputs}>
+                    <label htmlFor="numParticipantes">Número de participantes:</label>
+                    <input
+                    type='number'
+                    id='numParticipantes'
+                    value={numParticipantes}
+                    onChange={(event) => setNumParticipantes(event.target.value)}
+                    className={styles.inputClassName}>
+                    </input>
+                  </div>
+                </div>
+                <div className={styles.coluna50}>
+                  <div className={styles.inputs}>
+                    <label htmlFor="numParticipantes">Exemplo:</label>
+                    <input
+                    type='text'
+                    id='numParticipantes'
+                    value={numParticipantes}
+                    onChange={(event) => setNumParticipantes(event.target.value)}
+                    className={styles.inputClassName}>
+                    </input>
+                  </div>
+                </div>
+              </div>
+
+              {erro && <p>{erro}</p>}
+
+              <div className={styles.botao}>
+                <input
+                type='submit'
+                onClick={handleSubmit}>
+                </input>
+              </div>
+
+            </form>
           </div>
-          <div className={styles.botao}>
-            <input
-            type='submit'
-            onClick={handleSubmit}>
-            </input>
-          </div>
-        </form>
-
-        {/*<p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>*/}
-
+        </div>
       </main>
-
-      <footer>
-        <a
-          href="https://nubank.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Nubank
-        </a>
-      </footer>
 
       <style jsx>{`
         main {

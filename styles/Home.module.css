@@ -1,48 +1,47 @@
 .container { /* estrutura da página*/
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  height: 90%;
+  width: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
+  align-items: center; /*eixo x*/
+}
+
+.pagina { /* alinhar barra lateral e conteúdo na horizontal */
+  display: flex;
+  flex-direction: row;
   align-items: center;
+
+  width: 90%;
+  margin-left: 10%;
 }
 
-/* LINK NO TÍTULO
-.title a { 
-  color: #0070f3;
+.barralateral {
+  background-color: #820AD1;
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.logomenu {
+  color: white;
   text-decoration: none;
+  font-size: xx-large;
 }
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-*/
 
 .title {
   margin: 0 0 1rem;
   line-height: 1.15;
   font-size: 3.6rem;
 
-  text-align: center;
-  color: #820AD1;
+  text-align: start;
+  color: black;
 }
-
-.title,
-.description {
-  text-align: center;
-}
-
-/* DESCRIÇÃO ABAIXO DO TÍTULO
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-*/
 
 .formulario {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,11 +56,30 @@
   font-size: large;
 }
 .inputs input {
-  border: none;
+  border: solid 2px rgb(130, 10, 209, 0);
   border-radius: 5px;
   background-color: rgb(130, 10, 209, 0.2);
   width: 100%;
-  padding: 2%;
+  padding: 15px;
+}
+.inputs input:focus,
+.inputs input:active {
+  outline: none;
+  border: solid 2px #820AD1;
+}
+
+.colunas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.coluna50 {
+  width: 50%;
+}
+
+.input-error {
+  border: 1px solid red;
 }
 
 .botao input {
@@ -76,7 +94,7 @@
   font-size: large;
 }
 
-/* CARDS (projeto inicial)
+/* CARDS (projeto inicial) */
 .grid {
   display: flex;
   align-items: center;
@@ -96,14 +114,16 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  height: 180px;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #820AD1;
+  border-color: #820AD1;
 }
 
 .card h3 {
@@ -116,15 +136,17 @@
   font-size: 1.25rem;
   line-height: 1.5;
 }
-*/
 
+/*
 .logo {
   height: 1em;
 }
 
+ 
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
 }
+*/
