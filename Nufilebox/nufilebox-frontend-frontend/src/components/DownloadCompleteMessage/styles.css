@@ -1,0 +1,50 @@
+/*Styles da Encryption Message*/
+.download-complete-message {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1480px) {
+    .download-complete-message {
+        width: 27%;
+    }
+}
+
+@media (max-width: 992px) {
+    .download-complete-message {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-complete-message {
+        height: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-complete-message {
+        height: 40%; 
+    }
+}
+  
+.download-complete-label {
+    padding: 3%;
+    width: 70%;
+    color: #810DD0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.info-icon {
+    margin: 6%;
+    width: 25%;
+}

@@ -1,0 +1,73 @@
+/*Styles da password-text-field*/
+.download-password {
+    display: flex;
+    width: 100%;
+    height: 12%;
+    background: #FFFFFF;
+    border: 0.0625rem solid #810DD0;
+    border-radius: 0.125rem;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.password-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+  
+.password-input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem 1rem;
+    padding-left: 10%;
+    font-size: 90%;
+    font-family: sans-serif;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    max-width: calc(100% - 1.0rem);
+}
+  
+.padlock-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1480px) {
+    .download-password {
+        height: 12%; 
+    }
+  }
+  
+@media (max-width: 1200px) {
+    .download-password {
+        height: 12%;
+    }
+}
+  
+@media (max-width: 992px) {
+    .download-password {
+        height: 12%;
+    }
+}
+  
+@media (max-width: 768px) {
+    .download-password {
+        height: 12%;
+    }
+}
+  
+@media (max-width: 480px) {
+    .password-text-field {
+        height: 10%;
+    }
+}

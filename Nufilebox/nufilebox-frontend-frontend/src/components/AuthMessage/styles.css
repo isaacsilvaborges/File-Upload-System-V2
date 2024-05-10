@@ -1,0 +1,129 @@
+.auth-message {
+    display: flex;
+    width: 100%;
+    height: 95%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-label {
+    width: 70%;
+    color: #810DD0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NuFuturoLogo {
+    display: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-text {
+    margin-bottom: 0.9rem;
+    width: 100%;
+    height: 100%;
+    color: #810DD0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.authentication-text {
+    margin-bottom: 0.9rem;
+    padding: 15px;
+    width: 100%;
+    color: #810DD0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.circular-progress {
+    border: 0.3125rem solid rgba(0, 0, 0, .1);
+    border-top-color: #810DD0;
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 50%;
+    animation: spin 1.3s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 420px) {
+    .NuFuturoLogo {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .welcome-text, .authentication-text {
+        font-size: 16px;    
+    }
+    
+    .circular-progress {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-width: 0.25rem;
+    }
+}
+
+@media (max-width: 351px) {
+    .welcome-text, .authentication-text {
+        font-size: 0.75rem;    
+    }
+    
+    .circular-progress {
+        height: 2.1875rem;
+        width: 2.1875rem;
+    }
+}
+
+@media (max-height: 920px) {
+    .NuFuturoLogo {
+        margin-bottom: 0.5rem;
+    }
+    
+    .welcome-text {
+        margin-bottom: 0.2rem;
+    }
+    
+    .authentication-text {
+        margin-bottom: 0.2rem;
+    }
+}
+
+@media (max-height: 287px) {
+    .NuFuturoLogo {
+        margin-bottom: -0.2rem;
+    }
+    
+    .welcome-text {
+        margin-bottom: -0.2rem;
+    }
+    
+    .authentication-text {
+        margin-bottom: -0.5rem;
+    }
+    
+    .circular-progress {
+        margin-bottom: 0.4rem;
+    }
+}

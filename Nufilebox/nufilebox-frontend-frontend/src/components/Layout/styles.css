@@ -1,0 +1,35 @@
+.Layout {
+  background-image: url('/public/images/Background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ComputacaoUfcg {
+  background-position: center;
+}
+
+@media (max-width: 1480px) {
+  .Layout {
+    background: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+}
+
+@media (max-height: 579px) {
+  .ComputacaoUfcg {
+    display: none;
+  }
+}

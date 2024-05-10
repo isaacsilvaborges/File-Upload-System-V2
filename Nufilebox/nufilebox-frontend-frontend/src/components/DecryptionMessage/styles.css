@@ -1,0 +1,38 @@
+/*Styles da Decryption Message*/
+.decryption-message {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .decryption-message {
+        height: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .decryption-message {
+        height: 30%; 
+    }
+}
+  
+.decryption-label {
+    padding: 10%;
+    width: 70%;
+    color: #810DD0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.decrypting-icon {
+    margin: 2%;
+    width: 35%;
+}

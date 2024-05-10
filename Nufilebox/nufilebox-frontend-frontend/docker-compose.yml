@@ -1,0 +1,9 @@
+version: 2.17.3
+services:
+    app: 
+        build: .
+        container_name: nufilebox-frontend
+        ports:
+          - 3000:3000
+        volumes:
+          - ./src:/app/src
